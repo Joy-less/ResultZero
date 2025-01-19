@@ -1,5 +1,7 @@
 # ResultZero
 
+[![NuGet](https://img.shields.io/nuget/v/ResultZero.svg)](https://www.nuget.org/packages/ResultZero)
+
 Zero-allocation result pattern for C#.
 
 Normally, exceptions are a great choice for error handling in C#.
