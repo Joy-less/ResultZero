@@ -7,5 +7,25 @@
 
 	<!-- IDE0290: Use primary constructor -->
 	<NoWarn>IDE0290</NoWarn>
+
+	<IsTrimmable>True</IsTrimmable>
+	<IsAotCompatible>True</IsAotCompatible>
+	
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Description>Zero-allocation result pattern for C#.</Description>
+	<Title>ResultZero</Title>
+	<Authors>Joyless</Authors>
+	<PackageProjectUrl>https://github.com/Joy-less/ResultZero</PackageProjectUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryUrl>https://github.com/Joy-less/ResultZero</RepositoryUrl>
+	<PackageTags>results; value results; exceptions</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 </Project>

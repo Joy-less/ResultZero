@@ -25,7 +25,6 @@ public interface IResult {
     /// <summary>
     /// Throws an exception if an error occurred.
     /// </summary>
-    /// <exception cref="Exception"/>
     public void ThrowIfError();
     /// <summary>
     /// Returns a string representation of the result.

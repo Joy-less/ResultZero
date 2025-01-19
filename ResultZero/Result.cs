@@ -38,6 +38,7 @@ public readonly struct Result : IResult {
     }
 
     /// <inheritdoc/>
+    /// <exception cref="InvalidOperationException"/>
     public Error Error => IsError ? ErrorOrDefault : throw new InvalidOperationException("Result was value");
 
     /// <inheritdoc/>
@@ -55,6 +56,7 @@ public readonly struct Result : IResult {
         return IsError;
     }
     /// <inheritdoc/>
+    /// <exception cref="Exception"/>
     public void ThrowIfError() {
         if (IsError) {
             Error.Throw();
@@ -106,8 +108,10 @@ public readonly struct Result<T> : IResult<T> {
     [MemberNotNullWhen(true, nameof(ValueOrDefault))]
     public bool IsValue => !IsError;
     /// <inheritdoc/>
+    /// <exception cref="InvalidOperationException"/>
     public T Value => IsValue ? ValueOrDefault : throw new InvalidOperationException($"Result was error: \"{Error.Message}\"");
     /// <inheritdoc/>
+    /// <exception cref="InvalidOperationException"/>
     public Error Error => IsError ? ErrorOrDefault : throw new InvalidOperationException("Result was value");
 
     /// <inheritdoc/>
@@ -125,6 +129,7 @@ public readonly struct Result<T> : IResult<T> {
         return IsError;
     }
     /// <inheritdoc/>
+    /// <exception cref="Exception"/>
     public void ThrowIfError() {
         if (IsError) {
             Error.Throw();
