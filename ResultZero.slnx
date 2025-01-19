@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="ResultZero.Benchmarks/ResultZero.Benchmarks.csproj" />
+  <Project Path="ResultZero.Tests/ResultZero.Tests.csproj" />
+  <Project Path="ResultZero/ResultZero.csproj" />
+</Solution>
