@@ -24,17 +24,17 @@ public readonly struct Result : IResult {
         IsError = false;
     }
     /// <summary>
-    /// Constructs a failed result.
+    /// Constructs a failed result from an error.
     /// </summary>
     public Result(Error Error) {
         ErrorOrDefault = Error;
         IsError = true;
     }
     /// <summary>
-    /// Constructs a failed result.
+    /// Constructs a failed result from an exception.
     /// </summary>
-    public Result(string? ErrorMessage)
-        : this(new Error(ErrorMessage)) {
+    public Result(Exception Exception)
+        : this(new Error(Exception)) {
     }
 
     /// <inheritdoc/>
@@ -69,6 +69,12 @@ public readonly struct Result : IResult {
     public static implicit operator Result(Error? Error) {
         return Error is not null ? new Result(Error.Value) : Success;
     }
+    /// <summary>
+    /// Creates a failed result from an exception.
+    /// </summary>
+    public static implicit operator Result(Exception Exception) {
+        return Exception is not null ? new Result(Exception) : Success;
+    }
 }
 
 /// <summary>
@@ -91,17 +97,17 @@ public readonly struct Result<T> : IResult<T> {
         IsError = false;
     }
     /// <summary>
-    /// Constructs a failed result.
+    /// Constructs a failed result from an error.
     /// </summary>
     public Result(Error Error) {
         ErrorOrDefault = Error;
         IsError = true;
     }
     /// <summary>
-    /// Constructs a failed result.
+    /// Constructs a failed result from an exception.
     /// </summary>
-    public Result(string? ErrorMessage)
-        : this(new Error(ErrorMessage)) {
+    public Result(Exception Exception)
+        : this(new Error(Exception)) {
     }
 
     /// <inheritdoc/>
@@ -166,6 +172,12 @@ public readonly struct Result<T> : IResult<T> {
     /// </summary>
     public static implicit operator Result<T>(Error Error) {
         return new Result<T>(Error);
+    }
+    /// <summary>
+    /// Creates a failed result from an exception.
+    /// </summary>
+    public static implicit operator Result<T>(Exception Exception) {
+        return new Error(Exception);
     }
 
     /// <inheritdoc/>

@@ -58,4 +58,11 @@ public readonly struct Error {
     public override string ToString() {
         return $"Error: \"{Message}\"";
     }
+
+    /// <summary>
+    /// Creates an error from an exception.
+    /// </summary>
+    public static implicit operator Error(Exception Exception) {
+        return new Error(Exception);
+    }
 }
