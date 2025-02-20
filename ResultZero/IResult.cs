@@ -53,6 +53,11 @@ public interface IResult<T> : IResult {
     /// </summary>
     public IResult<TNew> Try<TNew>(Func<T, TNew> Map);
     /// <summary>
+    /// Returns <see langword="true"/> if an error occurred and provides the error or <see langword="default"/>(<see cref="Error"/>)
+    /// and the value or <see langword="default"/>(<typeparamref name="T"/>).
+    /// </summary>
+    public bool TryGetError([NotNullWhen(true)] out Error Error, [NotNullWhen(false)] out T? Value);
+    /// <summary>
     /// Returns <see langword="true"/> if a value was successfully returned and provides the value or <see langword="default"/>(<typeparamref name="T"/>)
     /// and the error or <see langword="default"/>(<see cref="Error"/>).
     /// </summary>
