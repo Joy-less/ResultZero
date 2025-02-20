@@ -51,7 +51,7 @@ public readonly struct Result : IResult {
         }
     }
     /// <inheritdoc/>
-    public bool TryGetError([NotNullWhen(false)] out Error Error) {
+    public bool TryGetError([NotNullWhen(true)] out Error Error) {
         Error = ErrorOrDefault;
         return IsError;
     }
@@ -130,13 +130,13 @@ public readonly struct Result<T> : IResult<T> {
         }
     }
     /// <inheritdoc/>
-    public bool TryGetError([NotNullWhen(false)] out Error Error, [NotNullWhen(false)] out T? Value) {
+    public bool TryGetError([NotNullWhen(true)] out Error Error, [NotNullWhen(false)] out T? Value) {
         Error = ErrorOrDefault;
         Value = ValueOrDefault;
         return IsError;
     }
     /// <inheritdoc/>
-    public bool TryGetError([NotNullWhen(false)] out Error Error) {
+    public bool TryGetError([NotNullWhen(true)] out Error Error) {
         Error = ErrorOrDefault;
         return IsError;
     }
