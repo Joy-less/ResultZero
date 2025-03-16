@@ -1,41 +1,44 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace ResultZero;
+﻿namespace ResultZero;
 
 /// <summary>
 /// An error that occurred.
 /// </summary>
 public readonly struct Error {
     /// <summary>
-    /// The optional error code (or 0).
+    /// The error code for debugging purposes.
     /// </summary>
-    public long Code { get; }
+    public object? Code { get; }
     /// <summary>
     /// The error message for debugging purposes.
     /// </summary>
     public object? Message { get; }
 
     /// <summary>
-    /// Constructs an error that occurred with an error code.
+    /// Constructs an error with a code and a message.
     /// </summary>
-    public Error(long Code, object? Message) {
+    public Error(object? Code, object? Message) {
         this.Code = Code;
         this.Message = Message;
     }
     /// <summary>
-    /// Constructs an error that occurred.
+    /// Constructs an error with a message.
     /// </summary>
     public Error(object? Message)
-        : this(0, Message) {
+        : this(null, Message) {
+    }
+    /// <summary>
+    /// Constructs an error.
+    /// </summary>
+    public Error()
+        : this(null) {
     }
 
     /// <summary>
     /// Returns the error code cast as <typeparamref name="T"/>.
     /// </summary>
-    public T GetCode<T>() where T : struct {
-        return Unsafe.BitCast<long, T>(Code);
+    public T GetCode<T>() {
+        return (T)Code!;
     }
-
     /// <summary>
     /// Returns the error message cast as <typeparamref name="T"/>.
     /// </summary>
