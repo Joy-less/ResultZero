@@ -3,13 +3,13 @@
 public class BasicTests {
     [Fact]
     public void Test1() {
-        Assert.Equal(5, ExampleSuccess().Value);
+        ExampleSuccess().Value.ShouldBe(5);
 
-        Assert.Throws<InvalidOperationException>(() => ExampleFailure().Value);
-        Assert.Throws<Exception>(() => ExampleFailure().ThrowIfError());
+        Should.Throw<InvalidOperationException>(() => ExampleFailure().Value);
+        Should.Throw<Exception>(() => ExampleFailure().ThrowIfError());
 
-        Assert.Throws<InvalidOperationException>(() => ExampleFailureException().Value);
-        Assert.Throws<InvalidDataException>(() => ExampleFailureException().ThrowIfError());
+        Should.Throw<InvalidOperationException>(() => ExampleFailureException().Value);
+        Should.Throw<InvalidDataException>(() => ExampleFailureException().ThrowIfError());
     }
 
     private static Result<int> ExampleSuccess() {
