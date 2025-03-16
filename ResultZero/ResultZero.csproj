@@ -1,29 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<VersionPrefix>2.2</VersionPrefix>
+    <VersionPrefix>2.2</VersionPrefix>
 
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-	<LangVersion>latest</LangVersion>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-	<!-- IDE0290: Use primary constructor -->
-	<NoWarn>IDE0290</NoWarn>
-
-	<IsTrimmable>True</IsTrimmable>
-	<IsAotCompatible>True</IsAotCompatible>
-	
-	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Description>Zero-allocation result pattern for C#.</Description>
-	<Title>ResultZero</Title>
-	<Authors>Joyless</Authors>
-	<PackageProjectUrl>https://github.com/Joy-less/ResultZero</PackageProjectUrl>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<RepositoryUrl>https://github.com/Joy-less/ResultZero</RepositoryUrl>
-	<PackageTags>results; value results; exceptions</PackageTags>
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!-- IDE0290: Use primary constructor -->
+    <NoWarn>IDE0290</NoWarn>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <IsTrimmable>True</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>Zero-allocation result pattern for C#.</Description>
+    <Title>ResultZero</Title>
+    <Authors>Joyless</Authors>
+    <PackageProjectUrl>https://github.com/Joy-less/ResultZero</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Joy-less/ResultZero</RepositoryUrl>
+    <PackageTags>results; value results; exceptions</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\README.md">
       <Pack>True</Pack>

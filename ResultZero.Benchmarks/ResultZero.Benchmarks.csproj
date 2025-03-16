@@ -5,10 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
     <PackageReference Include="FluentResults" Version="3.16.0" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\ResultZero\ResultZero.csproj" />
   </ItemGroup>
