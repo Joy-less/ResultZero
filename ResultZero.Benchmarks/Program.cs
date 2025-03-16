@@ -5,7 +5,7 @@ namespace ResultZero.Benchmarks;
 
 public class Program {
     public static void Main() {
-        BenchmarkRunner.Run<Benchmarks>();
+        BenchmarkSwitcher.FromAssemblies(AppDomain.CurrentDomain.GetAssemblies()).Run();
     }
 }
 

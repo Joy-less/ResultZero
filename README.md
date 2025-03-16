@@ -45,11 +45,11 @@ else {
 
 Comparison between [ResultZero](https://github.com/Joy-less/ResultZero), [FluentResults](https://github.com/altmann/FluentResults) and exceptions:
 
-| Method               | Mean          | Error      | StdDev     | Median        | Gen0   | Allocated |
-|--------------------- |--------------:|-----------:|-----------:|--------------:|-------:|----------:|
-| SuccessResultZero    |     1.9420 ns |  0.0118 ns |  0.0111 ns |     1.9411 ns |      - |         - |
-| SuccessFluentResults |    56.0877 ns |  0.4140 ns |  0.3457 ns |    56.0095 ns | 0.0510 |     160 B |
-| SuccessExceptions    |     0.0015 ns |  0.0029 ns |  0.0028 ns |     0.0000 ns |      - |         - |
-| FailureResultZero    |     0.0020 ns |  0.0039 ns |  0.0036 ns |     0.0000 ns |      - |         - |
-| FailureFluentResults |   206.8702 ns |  1.0955 ns |  0.9148 ns |   206.9100 ns | 0.1938 |     608 B |
-| FailureExceptions    | 2,622.5916 ns | 12.3147 ns | 10.9167 ns | 2,623.9363 ns | 0.0992 |     320 B |
+| Method               | Mean          | Error     | StdDev    | Median        | Gen0   | Allocated |
+|--------------------- |--------------:|----------:|----------:|--------------:|-------:|----------:|
+| SuccessResultZero    |     1.9425 ns | 0.0088 ns | 0.0083 ns |     1.9417 ns |      - |         - |
+| SuccessFluentResults |    56.6426 ns | 0.1629 ns | 0.1360 ns |    56.5849 ns | 0.0510 |     160 B |
+| SuccessExceptions    |     0.0028 ns | 0.0030 ns | 0.0028 ns |     0.0022 ns |      - |         - |
+| FailureResultZero    |     0.0016 ns | 0.0022 ns | 0.0020 ns |     0.0010 ns |      - |         - |
+| FailureFluentResults |   205.3345 ns | 0.7756 ns | 0.6876 ns |   205.3714 ns | 0.1938 |     608 B |
+| FailureExceptions    | 2,576.1063 ns | 7.6907 ns | 6.8176 ns | 2,575.9346 ns | 0.0992 |     320 B |
